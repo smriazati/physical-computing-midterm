@@ -6,6 +6,8 @@ Date: Thursday, October 12
 
 ## Project: RGB Game
 
+<img src="images/drawing1.png" width="300px">
+
 ### A drawing game...
 **How to play:** RGB is a simple drawing game with a physical controller. The player can activate the red, green and blue buttons to adjust the color of the digital pen. The player moves the game controller in all directions to draw a line. Pressing any key on the keyboard saves the drawing and clears the screen.
 
