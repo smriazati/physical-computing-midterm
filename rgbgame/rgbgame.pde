@@ -257,19 +257,19 @@ void endScreen() {
     fill(255);
 
     text(end1,screenWidth/2,100);
-    fill(255,0,0);
+    fill(255,230,0);
     text(currentTime,screenWidth/2,150);
     fill(255);
     text(end2,screenWidth/2,200);
 
     text(end3,screenWidth/2,300);
-    fill(0,255,0);
+    fill(0,255,230);
     text("~ "+currentBytesReceived,screenWidth/2,350);
     fill(255);
     text(end4,screenWidth/2,400);
     
     text(end5,screenWidth/2,500);
-    fill(0,0,255);
+    fill(230,0,255);
     text("~ "+currentBytesCreated,screenWidth/2,550);
     fill(255);
     text(end6,screenWidth/2,600);
@@ -295,9 +295,9 @@ void oscEvent(OscMessage theOscMessage) {
     //println("OSC colors-- red: "+redIsOnMessage+"  green:  " + greenIsOnMessage+"  blue:  " + blueIsOnMessage);    
 
     xValue = theOscMessage.get(3).floatValue();    
-    yValue = theOscMessage.get(4).floatValue();    
-    zValue = theOscMessage.get(5).floatValue();
-    //println("OSC accel values-- x:  " + xValue+"  y: "+yValue+"  z:  " + zValue);    
+    yValue = theOscMessage.get(5).floatValue();    
+    zValue = theOscMessage.get(4).floatValue();
+    println("OSC accel values-- x:  " + xValue+"  y: "+yValue+"  z:  " + zValue);    
   
     return;
   }
