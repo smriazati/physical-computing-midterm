@@ -262,7 +262,7 @@ Here are some other things I would continue to improve:
 
 * Automatically post each final, overlaid drawing from Processing to a Flickr account
 * The caption of the Flickr image would include further information about energy sources, based on the geo-location of the post
-* The caption could also include information,s
+* The caption could also include personalized, specific information about the projected water usage, pollution and hardware resources for your gameplay
 * Create more experimental games and interactive experiences that coudl combine into a collection exploring the materials behind the cloud
 
 
