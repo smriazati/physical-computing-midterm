@@ -39,12 +39,8 @@ MMA8452Q accel; // Default constructor, SA0 pin is HIGH
 // OSC set up
 UDP udp;
 
-// 192.168.0.3
-IPAddress outIp(192, 168, 0, 3);//your computer IP
-
-// campus 10.196.30.97
-// 10.193.0.144
-//IPAddress outIp(10,193,0,144);
+// PUT YOUR IP ADDRESS HERE
+IPAddress outIp(100, 100, 0, 3);//your computer IP
 
 unsigned int outPort = 1234; //computer incoming port
 unsigned int inPort = 8001;
@@ -152,8 +148,8 @@ void loop() {
 		// After reading, six class variables are updated: x, y, z, cx, cy, and cz.
 		// Those are the raw, 12-bit values (x, y, and z) and the calculated
 		// acceleration's in units of g (cx, cy, and cz).
-        outMessage.addFloat(accel.cx);
-        outMessage.addFloat(accel.cy);
+        outMessage.addFloat(accel.x);
+        outMessage.addFloat(accel.y);
         outMessage.addFloat(accel.z);
     }
     

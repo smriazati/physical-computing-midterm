@@ -119,11 +119,12 @@ void draw() {
 }
 
 void lineDrawer() {
-  //posX = map(xValue,-300,300,0,screenWidth);
-  //posY = map(yValue,-300,300,0,screenWidth);
+    posX = map(xValue,-300,300,0,screenWidth);
+    posY = map(yValue,-300,300,0,screenWidth);
   
-  posX = map(xValue,-1,1,0,screenWidth);
-  posY = map(yValue,-1,1,0,screenWidth);
+  // if you're using accel values
+  //posX = map(xValue,-1,1,0,screenWidth);
+  //posY = map(yValue,-1,1,0,screenWidth);
   
   if (posX >= 0) {
     prevX = currentX;
