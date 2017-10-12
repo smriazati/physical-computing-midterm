@@ -256,7 +256,7 @@ In this prototype, the electronics are visible and it's possible to remove/repla
 
 In a future version of this project, I would ditch the breadboard and embed the buttons and LEDs directly in the enclosure. I would add an additional button for starting / saving / resetting the game, to replace the need for keyboard presses. I might even add in a speaker, so the game could play a varying tone based on information from the accelerometer! 
 
-<img src="images/future1.jpg" width="300px"/>
+<img src="images/future1.JPG" width="300px"/>
 
 Here are some other things I would continue to improve: 
 
