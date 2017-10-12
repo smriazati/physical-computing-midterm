@@ -48,20 +48,24 @@ float zValue;
 
 float posX;
 float posY;
+float posZ;
 
 FloatList positionsX;
 FloatList positionsY;
+FloatList positionsZ;
 
 int listlengthX;
 int listlengthY;
+int listlengthZ;
 
 float currentX = screenWidth/2;
 float currentY = screenWidth/2;
+float currentZ = screenWidth/2;
 
 float prevX;
 float prevY;
+float prevZ;
 
-    
 void setup() {
   size(1000, 1000);
   oscP5 = new OscP5(this,1234);
@@ -79,6 +83,7 @@ void setup() {
   // create the list
   positionsX = new FloatList();
   positionsY = new FloatList();
+  positionsZ = new FloatList();
   
   //myRemoteLocation = new NetAddress("192.168.0.3",8001);
 
@@ -121,10 +126,8 @@ void draw() {
 void lineDrawer() {
     posX = map(xValue,-300,300,0,screenWidth);
     posY = map(yValue,-300,300,0,screenWidth);
-  
-  // if you're using accel values
-  //posX = map(xValue,-1,1,0,screenWidth);
-  //posY = map(yValue,-1,1,0,screenWidth);
+    posZ = map(zValue,-300,300,0,screenWidth);
+    
   
   if (posX >= 0) {
     prevX = currentX;
@@ -139,9 +142,15 @@ void lineDrawer() {
     currentY = positionsY.get(listlengthY-1);
   }
 
+  if (posY >= 0) {
+    prevZ = currentZ;
+    positionsZ.append(posZ);
+    listlengthZ = positionsZ.size();
+    currentZ = positionsZ.get(listlengthZ-1);
+  }
+
   // now DRAW THE LINE
-  line(currentX, currentY, prevX, prevY);
-  //println("currentX: " + currentX +", currentY: " + currentY + ", prevX: " + prevX +", prevY: " + prevY);  
+  line(currentY, currentZ, prevY, prevZ);
 }
 
 void colorPicker() {
@@ -294,10 +303,10 @@ void oscEvent(OscMessage theOscMessage) {
     blueIsOnMessage = theOscMessage.get(2).stringValue();
     //println("OSC colors-- red: "+redIsOnMessage+"  green:  " + greenIsOnMessage+"  blue:  " + blueIsOnMessage);    
 
-    xValue = theOscMessage.get(3).floatValue();    
-    yValue = theOscMessage.get(5).floatValue();    
-    zValue = theOscMessage.get(4).floatValue();
-    println("OSC accel values-- x:  " + xValue+"  y: "+yValue+"  z:  " + zValue);    
+    xValue = theOscMessage.get(3).floatValue();
+    yValue = theOscMessage.get(4).floatValue();    
+    zValue = theOscMessage.get(5).floatValue();    
+    //println("OSC accel values-- x:  " + xValue+"  y: "+yValue+"  z:  " + zValue);    
   
     return;
   }
